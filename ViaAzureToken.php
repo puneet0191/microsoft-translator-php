@@ -57,18 +57,6 @@ Class HTTPTranslator {
 		curl_close($ch);
 		return $curlResponse;
 	}
-
-	function createReqXML($languageCode) {
-		//Create the Request XML.
-		$requestXml = '<ArrayOfstring xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">';
-		if($languageCode) {
-			$requestXml .= "<string>$languageCode</string>";
-		} else {
-			throw new Exception('Language Code is empty.');
-		}
-		$requestXml .= '</ArrayOfstring>';
-		return $requestXml;
-	}
 }
 
 try {
